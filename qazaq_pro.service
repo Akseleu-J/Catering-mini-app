@@ -1,0 +1,17 @@
+[Unit]
+Description=Qazaq Catering Pro Bot
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/qazaq_pro
+EnvironmentFile=/root/qazaq_pro/.env
+ExecStart=/root/qazaq_pro/venv/bin/python bot.py
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
